@@ -1,5 +1,6 @@
 import axios from "axios";
 const api = import.meta.env.API_BASE_URL;
+import getToken from "../utilities/getToken";
 
 export function getGallery() {
   return async function (dispatch) {
