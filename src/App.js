@@ -1,11 +1,16 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import React from "react";
+import { BrowserRouter, Route, Switch } from "react-router-dom";
 
 function App() {
   return (
-    <div className="App">
-      <h1>Probando fuente</h1>
-    </div>
+    <BrowserRouter>
+      <div className="App">
+        <Switch>
+          <h1>Probando fuente</h1>
+        </Switch>
+      </div>
+    </BrowserRouter>
   );
 }
 
