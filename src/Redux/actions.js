@@ -59,6 +59,7 @@ export function login(formulario) {
         "http://localhost:1500/api/users/login",
         formulario
       );
+      localStorage.setItem("tokenPorfolio", info.data.token);
       return dispatch({
         type: "LOGIN",
         payload: info.data.token,
