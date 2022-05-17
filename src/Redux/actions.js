@@ -1,7 +1,7 @@
 import axios from "axios";
 import getToken from "../utilities/getToken";
 
-export async function getGallery() {
+export function getGallery() {
   return async function (dispatch) {
     try {
       const info = await axios.get(`http://localhost:1500/api/gallery`, {});
@@ -52,7 +52,7 @@ export function deleteGallery(archivo) {
   };
 }
 
-export async function login(formulario) {
+export function login(formulario) {
   return async function (dispatch) {
     try {
       let info = await axios.post(
