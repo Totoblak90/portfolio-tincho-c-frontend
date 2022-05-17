@@ -1,6 +1,7 @@
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import "./App.css";
 import React from "react";
+require("dotenv").config();
 
 function App() {
   return (
