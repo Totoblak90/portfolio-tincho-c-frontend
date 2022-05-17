@@ -1,7 +1,6 @@
 import { BrowserRouter, Switch } from "react-router-dom";
 import "./App.css";
 import React from "react";
-import { getGallery } from "./Redux/actions";
 
 async function App() {
   return (
