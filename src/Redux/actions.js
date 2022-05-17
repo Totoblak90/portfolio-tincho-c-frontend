@@ -1,10 +1,9 @@
 import axios from "axios";
-const api = process.env.API_BASE_URL;
 import getToken from "../utilities/getToken";
 
-export function getGallery() {
+export async function  getGallery() {
   return async function (dispatch) {
-    const info = await axios.get(`${api}/gallery`, {});
+    const info = await axios.get(`http://localhost:1500/api/gallery`, {});
     console.log(info.data);
     return dispatch({
       type: "GET_GALLERY",
@@ -15,7 +14,7 @@ export function getGallery() {
 
 export function postGallery(filename) {
   return async function (dispatch) {
-    let info = await axios.post(`${api}/gallery/save`, filename, getToken());
+    let info = await axios.post(`http://localhost:1500/api/gallery/save`, filename, getToken());
     return dispatch({
       type: "POST_GALLERY",
       payload: info.data,
@@ -23,11 +22,11 @@ export function postGallery(filename) {
   };
 }
 
-export function deleteGallery(filename) {
+export function deleteGallery(archivo) {
   return async function (dispatch) {
     let info = await axios.delete(
-      `${api}/gallery/delete`,
-      filename,
+      `http://localhost:1500/api/gallery/delete`,
+      archivo,
       getToken()
     );
     return dispatch({

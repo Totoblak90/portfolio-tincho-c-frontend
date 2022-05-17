@@ -1,9 +1,9 @@
-import { BrowserRouter, Route, Switch } from "react-router-dom";
+import { BrowserRouter, Switch } from "react-router-dom";
 import "./App.css";
 import React from "react";
-require("dotenv").config();
+import { getGallery } from "./Redux/actions";
 
-function App() {
+async function App() {
   return (
     <BrowserRouter>
       <div className="App">
