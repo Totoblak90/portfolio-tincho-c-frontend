@@ -40,15 +40,19 @@ export function deleteGallery(archivo) {
   };
 }
 
-export function login(formulario) {
+export async function login(formulario) {
   return async function (dispatch) {
-    let info = await axios.post(
-      "http://localhost:1500/api/users/login",
-      formulario
-    );
-    return dispatch({
-      type: "LOGIN",
-      payload: info.data.token,
-    });
+    try {
+      let info = await axios.post(
+        "http://localhost:1500/api/users/login",
+        formulario
+      );
+      return dispatch({
+        type: "LOGIN",
+        payload: info.data.token,
+      });
+    } catch (error) {
+      alert(error.response.data.message)
+    }
   };
 }
