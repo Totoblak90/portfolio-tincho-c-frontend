@@ -52,3 +52,17 @@ export function login(formulario) {
     });
   };
 }
+
+export function resetPassword(formulario) {
+  return async function (dispatch) {
+    let info = await axios.post(
+      "http://localhost:1500/api/users/reset-password",
+      formulario,
+      getToken()
+    );
+    return dispatch({
+      type: "RESET_PASSWORD",
+      payload: info.data,
+    });
+  };
+}
