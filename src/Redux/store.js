@@ -1,9 +1,17 @@
-// import { applyMiddleware } from "redux";
-// import thunk from "redux-thunk";
-import { configureStore } from "@reduxjs/toolkit";
-import rootReducer from "./reducer";
+import thunk from "redux-thunk";
+import gallery from './gallery'
+import {
+    combineReducers,
+    configureStore,
+} from '@reduxjs/toolkit';
+  
+const reducer = combineReducers({
+    gallery
+});
 
-// export const store = createStore(, applyMiddleware(thunk));
+
 export const store = configureStore({
-    reducer: rootReducer,
-})
+reducer,
+devTools: process.env.NODE_ENV !== 'production',
+middleware: [thunk]
+});
