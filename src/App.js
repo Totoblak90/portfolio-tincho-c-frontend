@@ -6,6 +6,7 @@ function App() {
   return (
     <BrowserRouter>
       <div className="App">
+        El App.js carga
       </div>
     </BrowserRouter>
   );
