@@ -1,7 +1,7 @@
 import axios from "axios";
 
 function Gallery() {
-    const getGallery = axios.get('http://localhost:1500/api/gallery', {})
+    axios.get('http://localhost:1500/api/gallery', {})
     .then(res => {
         console.log(res)
         return (
