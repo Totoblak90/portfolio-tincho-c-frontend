@@ -5,7 +5,7 @@ const initialState = {
   AllAssets: [],
 };
 
-function rootReducer(state = initialState, action) {
+export function rootReducer(state = initialState, action) {
   switch (action.type) {
     case "GET_GALLERY":
       return {
