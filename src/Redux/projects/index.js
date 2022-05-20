@@ -1,24 +1,24 @@
-import { createSlice } from '@reduxjs/toolkit';
+import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-    AllProjects: [],
-    OneProyect: {}
+  AllProjects: [],
+  OneProyect: {},
 };
 
 export const projectReducer = createSlice({
-  name: 'projectReducer',
+  name: "projectReducer",
   initialState,
   reducers: {
     getAllProjects: (state, action) => {
       state.AllProjects = action.payload;
     },
     getOneProyect: (state, action) => {
-      state.OneProyect = action.payload
-    }
+      state.OneProyect = action.payload;
+    },
   },
 });
 
 // Actions
-export const {  getAllProjects, getOneProyect } = projectReducer.actions;
+export const { getAllProjects, getOneProyect } = projectReducer.actions;
 
 export default projectReducer.reducer;
