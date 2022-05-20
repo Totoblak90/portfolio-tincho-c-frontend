@@ -7,7 +7,6 @@ import { getAllProjects } from './Redux/projects'
 import { selectProjects } from "./Redux/projects/selectors";
 import { getAllAssets } from "./Redux/assets-proyecto";
 import { selectAssets } from "./Redux/assets-proyecto/selectors";
-import { getToken } from './utilities/getToken';
 import './App.css';
 
 function App() {
