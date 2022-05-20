@@ -10,7 +10,7 @@ export const galleryReducer = createSlice({
   reducers: {
     setGalleries: (state, action) => {
       state.AllGalleries = action.payload;
-    },
+    }
   },
 });
 

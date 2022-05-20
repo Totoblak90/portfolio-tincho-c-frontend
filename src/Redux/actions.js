@@ -1,6 +1,6 @@
-export const setActionRequest = (type,payload) => ({
-  type, payload
-})
+// export const setActionRequest = (type,payload) => ({
+//   type, payload
+// })
 
 // import axios from "axios";
 // import getToken from "../utilities/getToken";

@@ -1,0 +1,1 @@
+export const selectAssets = (state) => state.assetsProyecto.AllAssets;
