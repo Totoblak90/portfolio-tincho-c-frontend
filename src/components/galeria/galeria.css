@@ -1,3 +1,10 @@
-.section-galeria {
-    height: 100vh;
+.section-galeria__container {
+    margin: auto;
+    max-width: 80%;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+.section-galeria__container--image-container img {
+    max-width: 20rem;
 }

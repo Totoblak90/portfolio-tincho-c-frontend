@@ -57,14 +57,18 @@ function Login() {
 
     const handleResetPasswordSubmit = (event) => {
         event.preventDefault();
-        if (resetPassword.newPassword === '' || resetPassword.oldPassword === '' || resetPassword.username === '') {
+        if (resetPassword.newPassword === '' || resetPassword.oldPassword === '' || resetPassword.username === '' || resetPassword.repeatNewPassword === '') {
             return alert("Debes completar todos los campos");
+        } else if (resetPassword.newPassword !== resetPassword.repeatNewPassword) {
+            return alert("Los campos de contraseña nueva y repetir contraseña nueva deben ser iguales");
         } else {
             resetPasswordPost(resetPassword);
         }
     }
 
     const handleSectionToggle = event => {
+        setLogin({username: '', password: ''})
+        setResetPassword({username: '', oldPassword: '', newPassword: '', repeatNewPassword: ''})
         setIsActive(current => !current);
       };
     // --------------------------------------------------------------------------------------------------------------------------------------------
@@ -106,7 +110,7 @@ function Login() {
                             <input type='password' id="newPassword" name="newPassword" value={resetPassword.newPassword} onChange={handleResetPasswordOnChange} placeholder="Contraseña nueva"></input>
                             <label htmlFor="repeatNewPassword">Repetir contraseña nueva</label>
                             <input type='password' id="repeatNewPassword" name="repeatNewPassword" value={resetPassword.repeatNewPassword} onChange={handleResetPasswordOnChange}  placeholder="Repetir contraseña nueva"></input>
-                            <button onClick={(e) => handleResetPasswordSubmit(e)} disabled={(resetPassword.newPassword === '' || resetPassword.oldPassword === '' || resetPassword.username === '') || (resetPassword.newPassword !== resetPassword.repeatNewPassword)}>Cambiar contraseña</button>
+                            <button onClick={(e) => handleResetPasswordSubmit(e)} disabled={resetPassword.newPassword === '' || resetPassword.oldPassword === '' || resetPassword.username === '' || resetPassword.repeatNewPassword === ''}>Cambiar contraseña</button>
                         </form>
                     </div>
                     <div className="section-login__card--footer">
