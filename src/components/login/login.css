@@ -1,0 +1,56 @@
+.section-login {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.section-login__card {
+    max-width: 50rem;
+    padding: 3rem;
+    box-shadow: 0 1rem 3rem rgb(0, 0, 0, .3);
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+.section-login__card--header {
+    text-align: center;
+}
+.section-login__card--body form label {
+    display: block;
+    margin-bottom: 1rem;
+}
+
+.section-login__card--body form input {
+    outline: none 0 transparent;
+    padding: .5rem;
+    border: none;
+    margin-bottom: 1.5rem;
+}
+
+.section-login__card--body form button {
+    cursor: pointer;
+    display: block;
+    margin: auto;
+    padding: .5rem 1rem;
+    background-color: #000;
+    color: #fff;
+    border-radius: 9px;
+}
+.section-login__card--body form button:disabled {
+    background-color: #fff;
+    color: #000;
+    border: none;
+    cursor: not-allowed;
+}
+.section-login__card--footer button {
+    cursor: pointer;
+    display: block;
+    margin: auto;
+    border-radius: 9px;
+    padding: .5rem 1rem;
+    border: none;
+}
+
+.no-show {
+    display: none;
+}
