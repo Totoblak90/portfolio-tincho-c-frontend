@@ -38,7 +38,7 @@
 }
 .section-login__card--body form button:disabled {
     background-color: #fff;
-    color: #000;
+    color: rgb(0, 0, 0, .3);
     border: none;
     cursor: not-allowed;
 }

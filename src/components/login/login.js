@@ -32,7 +32,7 @@ function Login() {
     // --------------------------------------------------------------------------------------------------------------------------------------------
     const [ login, setLogin ] = useState({username: "", password: ""});
     const [isActive, setIsActive] = useState(false);
-    const [ resetPassword, setResetPassword ] = useState({oldPassword: "", newPassword: "", username: ""});
+    const [ resetPassword, setResetPassword ] = useState({oldPassword: "", newPassword: "", username: "", repeatNewPassword: ""});
     // --------------------------------------------------------------------------------------------------------------------------------------------
     // --------------------------------------------------HANDLERS----------------------------------------------------------------------------------
     // --------------------------------------------------------------------------------------------------------------------------------------------
@@ -102,9 +102,11 @@ function Login() {
                             <input type='text' id="userName" name="username" value={resetPassword.username} onChange={handleResetPasswordOnChange} placeholder="Nombre de usuario"></input>
                             <label htmlFor="oldPassword">Contraseña anterior</label>
                             <input type='password' id="oldPassword" name="oldPassword" value={resetPassword.oldPassword} onChange={handleResetPasswordOnChange} placeholder="Contraseña anterior"></input>
-                            <label htmlFor="newPassword">Contraseña anterior</label>
+                            <label htmlFor="newPassword">Contraseña nueva</label>
                             <input type='password' id="newPassword" name="newPassword" value={resetPassword.newPassword} onChange={handleResetPasswordOnChange} placeholder="Contraseña nueva"></input>
-                            <button onClick={(e) => handleResetPasswordSubmit(e)} disabled={resetPassword.newPassword === '' || resetPassword.oldPassword === '' || resetPassword.username === ''}>Cambiar contraseña</button>
+                            <label htmlFor="repeatNewPassword">Repetir contraseña nueva</label>
+                            <input type='password' id="repeatNewPassword" name="repeatNewPassword" value={resetPassword.repeatNewPassword} onChange={handleResetPasswordOnChange}  placeholder="Repetir contraseña nueva"></input>
+                            <button onClick={(e) => handleResetPasswordSubmit(e)} disabled={(resetPassword.newPassword === '' || resetPassword.oldPassword === '' || resetPassword.username === '') || (resetPassword.newPassword !== resetPassword.repeatNewPassword)}>Cambiar contraseña</button>
                         </form>
                     </div>
                     <div className="section-login__card--footer">
