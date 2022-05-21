@@ -8,6 +8,7 @@
 // import { getAllAssets } from "./Redux/assets-proyecto";
 // import { selectAssets } from "./Redux/assets-proyecto/selectors";
 import Login from "./components/login/login";
+import Galeria from "./components/galeria/galeria";
 import "./App.css";
 
 function App() {
@@ -47,6 +48,7 @@ function App() {
   // }, []);
 
   return (<div className="App">
+    <Galeria />
     <Login />
   </div>);
 }
