@@ -14,7 +14,7 @@ function AdminRoutes() {
     useEffect(() => {
         const validateToken = () => {
             axios
-                .post("http://localhost:1500/api/verify-token", {token: localStorage.tokenPorfolio})
+                .post("http://localhost:1500/api/verify-token", {token: localStorage.getItem('tokenPorfolio')})
                     .then(res => {
                         dispatch(verifyUser(res.data))
                     })
