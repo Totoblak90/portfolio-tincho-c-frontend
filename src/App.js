@@ -5,14 +5,13 @@ import AdminRoutes from "./components/AdminRoutes/AdminRoutes";
 import "./App.css";
 
 function App() {
-
   return (
     <BrowserRouter>
       <div className="App">
         <Routes>
-          <Route exact path="" element={<Home />} />
-          <Route path="/:id" element={<DetailProyect />} /> 
-          <Route path="/admin" element={<AdminRoutes />} /> 
+          <Route exact path="/" element={<Home />} />
+          <Route path="/:id" element={<DetailProyect />} />
+          <Route path="/admin" element={<AdminRoutes />} />
         </Routes>
       </div>
     </BrowserRouter>
