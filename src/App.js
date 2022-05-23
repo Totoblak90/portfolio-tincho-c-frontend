@@ -10,7 +10,9 @@
 import Login from "./components/login/login";
 import Galeria from "./components/galeria/galeria";
 import Proyecto from "./components/Proyectos/proyecto";
-import { BrowserRouter, Route, Switch } from "react-router-dom";
+import Home from "./components/Home/Home";
+import DetailProyect from "./components/DetailProyect/DetailProyect";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./App.css";
 
 function App() {
@@ -52,10 +54,10 @@ function App() {
   return (
     <BrowserRouter>
       <div className="App">
-        <Switch>
-          {/* <Route exact path="/" component={Home} />
-          <Route path="/:id" component={DetailProyect} /> */}
-        </Switch>
+        <Routes>
+          <Route exact path="" element={<Home />} />
+          <Route path="/:id" element={<DetailProyect />} /> 
+        </Routes>
       </div>
     </BrowserRouter>
   );
