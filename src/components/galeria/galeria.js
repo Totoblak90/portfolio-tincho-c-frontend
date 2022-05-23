@@ -37,7 +37,7 @@ function Galeria() {
                 {
                     gallery.map(image => {
                         const source = `http://localhost:1500/gallery/${image.filename}`
-                            return <div id={image.id} className="section-galeria__container--image-container">
+                            return <div key={image.id} className="section-galeria__container--image-container">
                                         <img src={source} alt="Hay que hacer una mejora en el backend" />
                                     </div>
                             

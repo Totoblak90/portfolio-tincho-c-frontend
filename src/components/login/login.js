@@ -96,27 +96,27 @@ function Login() {
                 </div>
             </section>
             <section className={isActive ? 'section-login' : 'no-show'}>
-            <div className="section-login__card">
-                    <div className="section-login__card--header">
-                        <h2>Cambiar contraseña</h2>
-                    </div>
-                    <div className="section-login__card--body">
-                        <form >
-                        <label htmlFor="userName">Nombre de usuario</label>
-                            <input type='text' id="userName" name="username" value={resetPassword.username} onChange={handleResetPasswordOnChange} placeholder="Nombre de usuario"></input>
-                            <label htmlFor="oldPassword">Contraseña anterior</label>
-                            <input type='password' id="oldPassword" name="oldPassword" value={resetPassword.oldPassword} onChange={handleResetPasswordOnChange} placeholder="Contraseña anterior"></input>
-                            <label htmlFor="newPassword">Contraseña nueva</label>
-                            <input type='password' id="newPassword" name="newPassword" value={resetPassword.newPassword} onChange={handleResetPasswordOnChange} placeholder="Contraseña nueva"></input>
-                            <label htmlFor="repeatNewPassword">Repetir contraseña nueva</label>
-                            <input type='password' id="repeatNewPassword" name="repeatNewPassword" value={resetPassword.repeatNewPassword} onChange={handleResetPasswordOnChange}  placeholder="Repetir contraseña nueva"></input>
-                            <button onClick={(e) => handleResetPasswordSubmit(e)} disabled={resetPassword.newPassword === '' || resetPassword.oldPassword === '' || resetPassword.username === '' || resetPassword.repeatNewPassword === ''}>Cambiar contraseña</button>
-                        </form>
-                    </div>
-                    <div className="section-login__card--footer">
-                        <button onClick={handleSectionToggle}>Volver</button>
-                    </div>
-            </div>
+                <div className="section-login__card">
+                        <div className="section-login__card--header">
+                            <h2>Cambiar contraseña</h2>
+                        </div>
+                        <div className="section-login__card--body">
+                            <form >
+                            <label htmlFor="userName">Nombre de usuario</label>
+                                <input type='text' id="userName" name="username" value={resetPassword.username} onChange={handleResetPasswordOnChange} placeholder="Nombre de usuario"></input>
+                                <label htmlFor="oldPassword">Contraseña anterior</label>
+                                <input type='password' id="oldPassword" name="oldPassword" value={resetPassword.oldPassword} onChange={handleResetPasswordOnChange} placeholder="Contraseña anterior"></input>
+                                <label htmlFor="newPassword">Contraseña nueva</label>
+                                <input type='password' id="newPassword" name="newPassword" value={resetPassword.newPassword} onChange={handleResetPasswordOnChange} placeholder="Contraseña nueva"></input>
+                                <label htmlFor="repeatNewPassword">Repetir contraseña nueva</label>
+                                <input type='password' id="repeatNewPassword" name="repeatNewPassword" value={resetPassword.repeatNewPassword} onChange={handleResetPasswordOnChange}  placeholder="Repetir contraseña nueva"></input>
+                                <button onClick={(e) => handleResetPasswordSubmit(e)} disabled={resetPassword.newPassword === '' || resetPassword.oldPassword === '' || resetPassword.username === '' || resetPassword.repeatNewPassword === ''}>Cambiar contraseña</button>
+                            </form>
+                        </div>
+                        <div className="section-login__card--footer">
+                            <button onClick={handleSectionToggle}>Volver</button>
+                        </div>
+                </div>
             </section>
         </div>
     )
