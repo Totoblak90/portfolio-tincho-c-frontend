@@ -20,7 +20,7 @@ function Proyecto() {
     getProyects();
   }, []);
   return (
-    <div> 
+    <div>
       <section className="section-proyects">
         <div>
           <h2>Mis proyectos</h2>
@@ -28,11 +28,11 @@ function Proyecto() {
             {proyectos.length > 0 ? (
               proyectos.map((project) => {
                 const source = `http://localhost:1500/proyect/${project.image}`;
-                const link = `/home/${project.id}`
+                const link = `/${project.id}`;
                 return (
                   <Link key={project.id} to={link}>
                     <div>
-                      <h3 >{project.name}</h3>
+                      <h3>{project.name}</h3>
                       <img src={source} alt="Imagen no disponible" />
                     </div>
                   </Link>
