@@ -1,0 +1,1 @@
+export const verifyUserSelector = (state) => state.login.Verify;

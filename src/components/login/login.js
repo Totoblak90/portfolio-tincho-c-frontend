@@ -1,8 +1,10 @@
 import axios from "axios";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import "./login.css";
 
 function Login() {
+
 
     /**
      * Guarda el token en el localStorage para poder hacer tareas admin
@@ -12,7 +14,8 @@ function Login() {
         axios.post("http://localhost:1500/api/users/login", body)
             .then(res => {
                 localStorage.setItem('tokenPorfolio', res.data.token)
-                // Si inicia sesión OK además de guardar el token hay que redirigirlo al panel administrativo;
+                // Refrescamos la página para que cargue la info correspondiente
+                document.location.reload() 
             })
             .catch(err => alert(err.response.data.message))
 

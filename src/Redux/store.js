@@ -2,6 +2,7 @@ import thunk from "redux-thunk";
 import gallery from './gallery'
 import projects from './projects'
 import assetsProyecto from './assets-proyecto'
+import login from './login'
 
 import {
     combineReducers,
@@ -11,7 +12,8 @@ import {
 const reducers = combineReducers({
     gallery,
     projects,
-    assetsProyecto
+    assetsProyecto,
+    login
 });
 
 
