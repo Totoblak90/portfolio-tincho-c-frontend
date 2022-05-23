@@ -23,7 +23,6 @@ function AdminRoutes() {
     };
     validateToken();
   }, []);
-  console.log(isUserLogged);
   return <>{isUserLogged ? <Dashbord /> : <Login />}</>;
 }
 
