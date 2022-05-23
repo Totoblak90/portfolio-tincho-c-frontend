@@ -9,6 +9,7 @@
 // import { selectAssets } from "./Redux/assets-proyecto/selectors";
 import Login from "./components/login/login";
 import Galeria from "./components/galeria/galeria";
+import Proyecto from "./components/Proyectos/proyecto";
 import "./App.css";
 
 function App() {
@@ -47,10 +48,13 @@ function App() {
   //   getProyectId();
   // }, []);
 
-  return (<div className="App">
-    <Galeria />
-    <Login />
-  </div>);
+  return (
+    <div className="App">
+      <Galeria />
+      <Login />
+      <Proyecto />
+    </div>
+  );
 }
 
 export default App;
