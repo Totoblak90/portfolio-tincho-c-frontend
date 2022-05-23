@@ -11,7 +11,7 @@ function App() {
         <Routes>
           <Route exact path="/" element={<Home />} />
           <Route path="/:id" element={<DetailProyect />} />
-          <Route path="/admin" element={<AdminRoutes />} />
+          <Route path="/admin/*" element={<AdminRoutes />} />
         </Routes>
       </div>
     </BrowserRouter>
