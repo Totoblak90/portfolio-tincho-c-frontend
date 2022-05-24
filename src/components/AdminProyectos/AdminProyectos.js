@@ -135,7 +135,9 @@ function AdminProyectos() {
                       {getFechaInicioProyectoFormateada(proyecto.proyect_date)}
                     </td>
                     <td>
-                      <FiEdit2 />
+                      <Link to={"/admin/edit-proyect/" + proyecto.id} >
+                        <FiEdit2 />
+                      </Link>
                       <FiTrash2
                         onClick={() =>
                           deleteProyect(proyecto.image, proyecto.id)
