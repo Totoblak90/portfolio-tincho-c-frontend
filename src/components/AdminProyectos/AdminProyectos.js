@@ -92,7 +92,9 @@ function AdminProyectos() {
     <>
       <h2>
         Proyectos:
-        <button> <FiPlus /> Crear proyecto</button>
+        <Link to="/admin/create-proyect">
+          <button> <FiPlus /> Crear proyecto</button>
+        </Link>
       </h2>
       <>
         <table>
