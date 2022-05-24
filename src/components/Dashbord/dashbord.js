@@ -3,6 +3,7 @@ import "./dashbord.css";
 import AdminHome from "../AdminHome/adminHome";
 import AdminCreateProyect from "../AdminCreateProyect/AdminCreateProyect";
 import AdminEditProyect from "../AdminEditProyect/AdminEditProyect";
+import AdminCreateAssets from "../AdminCreateAssets/AdminCreateAssets";
 
 function Dashbord() {
   return (
@@ -11,6 +12,7 @@ function Dashbord() {
         <Route exact path="/" element={<AdminHome />} />
         <Route path="/create-proyect" element={<AdminCreateProyect />} />
         <Route path="/edit-proyect/:id" element={<AdminEditProyect />} />
+        <Route path="/create-assets" element={<AdminCreateAssets />} />
       </Routes>
     </div>
   );

@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 import { useAppDispatch, useAppSelector } from "../../Redux/hooks";
 import { selectProjects } from "../../Redux/projects/selectors";
 import { getAllProjects } from "../../Redux/projects";
-import { FiTrash2, FiEdit2, FiPlus } from "react-icons/fi";
+import { FiTrash2, FiEdit2, FiPlus, FiUpload } from "react-icons/fi";
 
 function AdminProyectos() {
   const dispatch = useAppDispatch();
@@ -93,7 +93,10 @@ function AdminProyectos() {
       <h2>
         Proyectos:
         <Link to="/admin/create-proyect">
-          <button> <FiPlus /> Crear proyecto</button>
+          <button>
+            {" "}
+            <FiPlus /> Crear proyecto
+          </button>
         </Link>
       </h2>
       <>
@@ -135,7 +138,7 @@ function AdminProyectos() {
                       {getFechaInicioProyectoFormateada(proyecto.proyect_date)}
                     </td>
                     <td>
-                      <Link to={"/admin/edit-proyect/" + proyecto.id} >
+                      <Link to={"/admin/edit-proyect/" + proyecto.id}>
                         <FiEdit2 />
                       </Link>
                       <FiTrash2
@@ -143,6 +146,11 @@ function AdminProyectos() {
                           deleteProyect(proyecto.image, proyecto.id)
                         }
                       />
+                      <Link to="/admin/create-assets">
+                        <button>
+                          <FiUpload /> Agregar imágen al proyecto
+                        </button>
+                      </Link>
                     </td>
                   </tr>
                 );
