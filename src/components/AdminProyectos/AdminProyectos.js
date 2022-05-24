@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 import { useAppDispatch, useAppSelector } from "../../Redux/hooks";
 import { selectProjects } from "../../Redux/projects/selectors";
 import { getAllProjects } from "../../Redux/projects";
-import { FiTrash2, FiUpload } from "react-icons/fi";
+import { FiTrash2, FiEdit2, FiPlus } from "react-icons/fi";
 
 function AdminProyectos() {
   const dispatch = useAppDispatch();
@@ -24,7 +24,7 @@ function AdminProyectos() {
   }, []);
 
   const deleteProyect = (filename, id) => {
-    if (window.confirm("Estas seguro que queres eliminar este proyecto")) {
+    if (window.confirm("¿Estás seguro que queres eliminar este proyecto?")) {
       axios
         .delete(`http://localhost:1500/api/projects/deleteProyect/${id}`, {
           data: { image: filename },
@@ -90,7 +90,10 @@ function AdminProyectos() {
 
   return (
     <>
-      <h2>Proyectos:</h2>
+      <h2>
+        Proyectos:
+        <button> <FiPlus /> Crear proyecto</button>
+      </h2>
       <>
         <table>
           <thead>
@@ -101,7 +104,7 @@ function AdminProyectos() {
                 <th>Nombre</th>
                 <th>Descripción</th>
                 <th>Fecha de Inicio</th>
-                <th>Borrar</th>
+                <th>Acciones</th>
               </tr>
             ) : (
               <tr>
@@ -130,6 +133,7 @@ function AdminProyectos() {
                       {getFechaInicioProyectoFormateada(proyecto.proyect_date)}
                     </td>
                     <td>
+                      <FiEdit2 />
                       <FiTrash2
                         onClick={() =>
                           deleteProyect(proyecto.image, proyecto.id)

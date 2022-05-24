@@ -86,7 +86,10 @@ function AdminGalerias() {
 
   return (
     <>
-      <h2>Galeria:</h2>
+      <h2>
+        Galeria:
+        <button onClick={() => agregarImagen()}><FiUpload/> Agregar imágen</button>
+      </h2>
         <table>
             <thead>
                 {
@@ -95,9 +98,8 @@ function AdminGalerias() {
                                 <th>Número</th>
                                 <th>Imágen</th>
                                 <th>Borrar</th>
-                                <th>Agregar imágen <FiUpload onClick={() => agregarImagen()}/></th>
                             </tr>
-                        : <tr><th>Agregar imágen <FiUpload onClick={() => agregarImagen()}/></th></tr>
+                        : <tr><th>No hay imágenes en la galería</th></tr>
                 }
             </thead>
             <tbody>
