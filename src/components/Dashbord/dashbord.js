@@ -12,7 +12,7 @@ function Dashbord() {
         <Route exact path="/" element={<AdminHome />} />
         <Route path="/create-proyect" element={<AdminCreateProyect />} />
         <Route path="/edit-proyect/:id" element={<AdminEditProyect />} />
-        <Route path="/create-assets" element={<AdminCreateAssets />} />
+        <Route path="/assets/:id" element={<AdminCreateAssets />} />
       </Routes>
     </div>
   );

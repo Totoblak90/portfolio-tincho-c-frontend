@@ -1,4 +1,3 @@
-import AdminAssets from "../AdminAssets/adminAssets";
 import "./AdminProyectos.css";
 
 import axios from "axios";
@@ -7,7 +6,7 @@ import { Link } from "react-router-dom";
 import { useAppDispatch, useAppSelector } from "../../Redux/hooks";
 import { selectProjects } from "../../Redux/projects/selectors";
 import { getAllProjects } from "../../Redux/projects";
-import { FiTrash2, FiEdit2, FiPlus, FiUpload } from "react-icons/fi";
+import { FiTrash2, FiEdit2, FiPlus, FiUpload, FiImage } from "react-icons/fi";
 
 function AdminProyectos() {
   const dispatch = useAppDispatch();
@@ -146,10 +145,8 @@ function AdminProyectos() {
                           deleteProyect(proyecto.image, proyecto.id)
                         }
                       />
-                      <Link to="/admin/create-assets">
-                        <button>
-                          <FiUpload /> Agregar imágen al proyecto
-                        </button>
+                      <Link to={"/admin/assets/" + proyecto.id}>
+                          <FiImage />
                       </Link>
                     </td>
                   </tr>
@@ -164,7 +161,6 @@ function AdminProyectos() {
         </table>
       </>
 
-      <AdminAssets />
     </>
   );
 }
