@@ -78,7 +78,7 @@ function AdminEditProyect() {
         formData.append('name', body.name);
         formData.append('description', body.description);
         formData.append('image', body.image);
-        formData.append('oldFilename', proyectById.filename);
+        formData.append('oldFilename', proyectById.image);
 
         axios.put(`http://localhost:1500/api/projects/editProyect/${id}`, formData, {headers: {Authorization: localStorage.getItem('tokenPorfolio')}})
             .then(res => {
