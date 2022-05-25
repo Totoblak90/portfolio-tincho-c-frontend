@@ -30,6 +30,9 @@ const formValidation =  (proyecto) => {
 }
 
 function AdminEditProyect() {
+    // --------------------------------------------------------------------------------------------------------------------------------------------
+    // ------------------------------------------------VARIABLES DE USO GRAL-----------------------------------------------------------------------
+    // --------------------------------------------------------------------------------------------------------------------------------------------
     const { id } = useParams();
     const dispatch = useAppDispatch();
     const proyectById = useAppSelector(selectProjectsID);
@@ -37,7 +40,15 @@ function AdminEditProyect() {
     const [proyecto, setProyecto] = useState({name: "", image: "" , description: ""});
     const [errors, setErrors] = useState({});
 
+    // --------------------------------------------------------------------------------------------------------------------------------------------
+    // ------------------------------------------------USEEFFECT-----------------------------------------------------------------------------------
+    // --------------------------------------------------------------------------------------------------------------------------------------------
     useEffect(() => {
+        /**
+         * Obtiene un proyecto por id
+         *
+         * @param {*} id
+         */
         const getProyectId = (id) =>
             axios
                 .get(`http://localhost:1500/api/projects/${id}`)
@@ -54,6 +65,14 @@ function AdminEditProyect() {
         setErrors(formValidation(proyecto));
     }, [proyecto])
 
+    // --------------------------------------------------------------------------------------------------------------------------------------------
+    // ------------------------------------------------FUNCIONES-----------------------------------------------------------------------------------
+    // --------------------------------------------------------------------------------------------------------------------------------------------
+    /**
+     * Edita un proyecto en la base de datos
+     *
+     * @param {*} body
+     */
     const editProyecto = (body) => {
         const formData = new FormData();
         formData.append('name', body.name);
@@ -69,19 +88,37 @@ function AdminEditProyect() {
             .catch((err) => alert(err.response.data.message))
     };
 
+    /**
+     * Maneja los cambios de valores de los inputs del formulario
+     *
+     * @param {*} event
+     */
     const handleInputChange = (event) => {
         setProyecto({...proyecto, [event.target.name]: event.target.value})
     }
 
+    /**
+     * Maneja los cambios de valores del input de imagen del formulario
+     *
+     * @param {*} event
+     */
     const handleFileInputChange = (event) => {
         setProyecto({...proyecto, [event.target.name]: event.target.files[0]})
     }
 
+    /**
+     * Maneja el submit del formulario
+     *
+     * @param {*} event
+     */
     const handleFormSubmit = (event) => {
         event.preventDefault();
         editProyecto(proyecto)
     }
 
+    // --------------------------------------------------------------------------------------------------------------------------------------------
+    // ------------------------------------------------JSX-----------------------------------------------------------------------------------------
+    // --------------------------------------------------------------------------------------------------------------------------------------------
     return <>
         <section >
             <Link to="/admin">
