@@ -28,7 +28,7 @@ function Proyecto() {
             {proyectos.length > 0 ? (
               proyectos.map((project) => {
                 const source = `http://localhost:1500/proyect/${project.image}`;
-                const link = `/${project.id}`;
+                const link = `/projects/${project.id}`;
                 return (
                   <Link key={project.id} to={link}>
                     <div>
