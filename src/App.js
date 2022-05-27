@@ -2,6 +2,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Home from "./components/Home/Home";
 import DetailProyect from "./components/DetailProyect/DetailProyect";
 import AdminRoutes from "./components/AdminRoutes/AdminRoutes";
+import Proyecto from "./components/Proyectos/proyecto";
 import "./App.css";
 
 function App() {
@@ -10,7 +11,8 @@ function App() {
       <div className="App">
         <Routes>
           <Route exact path="/" element={<Home />} />
-          <Route path="/:id" element={<DetailProyect />} />
+          <Route path="/projects" element={<Proyecto />} />
+          <Route path="/projects/:id" element={<DetailProyect />} />
           <Route path="/admin/*" element={<AdminRoutes />} />
         </Routes>
       </div>

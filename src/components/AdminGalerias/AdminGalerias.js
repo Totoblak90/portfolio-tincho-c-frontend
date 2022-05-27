@@ -126,11 +126,11 @@ function AdminGalerias() {
                                                 muted={true}
                                                 loop={true} 
                                                 controls={true}
-                                                className="imagen-galeria"
+                                                className="imagen-galeria-admin"
                                             ></video> :  <img
                                             src={source}
                                             alt="No se cargó la imágen correctamente"
-                                            className="imagen-galeria"/>
+                                            className="imagen-galeria-admin"/>
                                         }
                                     </td>
                                     <td>

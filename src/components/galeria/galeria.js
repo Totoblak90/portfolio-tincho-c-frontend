@@ -12,7 +12,8 @@ function Galeria() {
   // --------------------------------------------------------------------------------------------------------------------------------------------
   const dispatch = useAppDispatch();
   const gallery = useAppSelector(selectGallery);
-
+  const imagenGaleria = document.getElementsByClassName('imagen-galeria');
+  const arrayDeImagenes = Array.prototype.slice.call( imagenGaleria );
   // --------------------------------------------------------------------------------------------------------------------------------------------
   // ------------------------------------------------USEEFFECT-----------------------------------------------------------------------------------
   // --------------------------------------------------------------------------------------------------------------------------------------------
@@ -28,35 +29,37 @@ function Galeria() {
 
     getGallery();
   }, []);
-  
+
   // --------------------------------------------------------------------------------------------------------------------------------------------
   // ------------------------------------------------JSX-----------------------------------------------------------------------------------------
   // --------------------------------------------------------------------------------------------------------------------------------------------
   return (
-    <div>
-      <section className="section-galeria">
-        <div className="section-galeria__container">
-          {gallery.length > 0 ? (
-            gallery.map((image) => {
-              const source = `http://localhost:1500/gallery/${image.filename}`;
-              return (
-                <div
-                  key={image.id}
-                  className="section-galeria__container--image-container"
-                >
-                  <img
-                    src={source}
-                    alt="Hay que hacer una mejora en el backend"
-                  />
-                </div>
-              );
+    <section className="section-galeria">
+        {gallery.length > 0 ? (
+          gallery.map((image) => {
+            const source = `http://localhost:1500/gallery/${image.filename}`;
+            arrayDeImagenes?.forEach(imagen => {
+              const ancho = imagen.naturalWidth;
+              const alto = imagen.naturalHeight;
+              if (alto > ancho) {
+                imagen.classList.add('imagen-vertical');
+              } else {
+                imagen.classList.add('imagen-horizontal');
+              }
             })
-          ) : (
-            <p>No hay imagenes en este momento</p>
-          )}
-        </div>
-      </section>
-    </div>
+            return (
+                <img
+                  key={image.id}
+                  src={source}
+                  alt="No se cargó correctamente la imágen"
+                  className="imagen-galeria"
+                />
+            );
+          })
+        ) : (
+          <p>No hay imagenes en este momento</p>
+        )}
+    </section>
   );
 }
 
