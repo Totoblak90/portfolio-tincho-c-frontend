@@ -29,36 +29,40 @@ function Galeria() {
 
     getGallery();
   }, []);
-
   // --------------------------------------------------------------------------------------------------------------------------------------------
   // ------------------------------------------------JSX-----------------------------------------------------------------------------------------
   // --------------------------------------------------------------------------------------------------------------------------------------------
   return (
     <section className="section-galeria">
         {gallery.length > 0 ? (
+
           gallery.map((image) => {
-            const source = `http://localhost:1500/gallery/${image.filename}`;
-            arrayDeImagenes?.forEach(imagen => {
-              const ancho = imagen.naturalWidth;
-              const alto = imagen.naturalHeight;
-              if (alto > ancho) {
-                imagen.classList.add('imagen-vertical');
-              } else {
-                imagen.classList.add('imagen-horizontal');
-              }
-            })
-            return (
-                <img
-                  key={image.id}
-                  src={source}
-                  alt="No se cargó correctamente la imágen"
-                  className="imagen-galeria"
-                />
-            );
-          })
+              const source = `http://localhost:1500/gallery/${image.filename}`;
+              return (
+                  <img
+                    key={image.id}
+                    src={source}
+                    alt="No se cargó correctamente la imágen"
+                    className="imagen-galeria"
+                  />
+              );
+            }
+          )
         ) : (
           <p>No hay imagenes en este momento</p>
         )}
+        {
+          
+          arrayDeImagenes?.forEach(imagen => {
+            const ancho = imagen.naturalWidth;
+            const alto = imagen.naturalHeight;
+            if (alto > ancho) {
+              imagen.classList.add('imagen-vertical');
+            } else {
+              imagen.classList.add('imagen-horizontal');
+            }
+          })
+        }
     </section>
   );
 }
